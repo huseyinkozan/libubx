@@ -19,7 +19,7 @@ describe('Check parsing of navigation message', function () {
     var binaryStream = fs.createReadStream('../fixtures/m8t/rover.ubx');
     it('should parse binary ubx and payload', function () {
       ubx.dispatch(binaryStream, function (err, decoded, raw) {
-        if (decoded.ubx.msgClass === 0x01) {
+        if (decoded.ubx.msgId === 0x01) {
           const fields = decoded.fields;
           t.assert(fields.ecefX < 0);
           t.assert(fields.ecefY < 0);
