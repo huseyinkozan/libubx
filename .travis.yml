@@ -1,0 +1,26 @@
+sudo: false
+language: python
+notifications:
+  email: false
+
+cache:
+  apt: true
+  directories:
+    - node_modules
+
+node_js:
+  - "6.4.0"
+
+before_install:
+  # Install node 6; from https://github.com/nodejs/nan/blob/master/.travis.yml
+  - rm -rf ~/.nvm && git clone https://github.com/creationix/nvm.git ~/.nvm && (cd ~/.nvm && git checkout `git describe --abbrev=0 --tags`) && source ~/.nvm/nvm.sh && nvm install 6
+  - npm install npm
+  - mv node_modules npm
+  - npm/.bin/npm --version
+  - npm/.bin/npm install
+
+install:
+  - npm install
+
+script:
+  - npm test

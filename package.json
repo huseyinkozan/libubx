@@ -1,0 +1,32 @@
+{
+  "name": "libubx",
+  "version": "1.0.0",
+  "description": "libubx bindings for JavaScript.",
+  "files": [
+    "js/*"
+  ],
+  "main": "js/src/index.js",
+  "scripts": {
+    "test": "node --version; cd js && mocha -R spec test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swift-nav/libubx.git"
+  },
+  "author": "Swift Navigation <engineering@swiftnav.com> (https://github.com/swift-nav)",
+  "contributors": [
+    "Joshua Gross <josh@swift-nav.com> (https://github.com/JoshuaGross)",
+    "Bhaskar Mookerji <mookerji@swift-nav.com> (https://github.com/mookerji)"
+  ],
+  "license": "LGPL-3.0",
+  "dependencies": {
+    "binary-parser": "git://github.com/JoshuaGross/binary-parser.git#jgross-greedy-string"
+  },
+  "devDependencies": {
+    "benchmark": "^2.1.1",
+    "mocha": "^2.4.5",
+    "request": "^2.74.0",
+    "serialport": "^4.0.1",
+    "chai": "^3.5.0"
+  }
+}
