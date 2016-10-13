@@ -47,7 +47,7 @@ BufferCorruptError.prototype.constructor = BufferCorruptError;
 var packages = ['position'];
 
 var ubxTable = packages.map(function (pkg) {
-  return require(path.resolve(__dirname, "./" + pkg + ".js"));
+  return require("./" + pkg + ".js");
 }).reduce(function (prev, curr) {
   var numericKeysDict = {};
   Object.keys(curr).map(function (key) {
