@@ -18,6 +18,7 @@ Some bindings are available on package managers:
 ## LICENSE
 
 Copyright © 2016 Swift Navigation
+
 Copyright © 2016 u-blox
 
 Distributed under LGPLv3.0.
