@@ -15,8 +15,6 @@ var Parser = require('binary-parser').Parser;
  *
  * @param ubx An UBX object with a payload to be decoded.
  */
-var NAV_POS_ECEF = 0x01;
-
 var NavPosEcef = function (ubx) {
   UBX.call(this, ubx);
   this.messageType = "NAV-POSECEF";

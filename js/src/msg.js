@@ -50,11 +50,12 @@ BufferCorruptError.prototype.constructor = BufferCorruptError;
 var ubxTable = {
   0x01: {
     0x01: require('./NAV_POS_ECEF.js')/*NavPosEcef*/,
+    0x05: require('./NAV_ATT.js')/*NavAtt*/,
     0x02: require('./NAV_POS_LLH.js')/*NavPosLlh*/,
     0x07: require('./NAV_POS_PVT.js')/*NavPVT*/
   },
   0x28: {
-    0x00: require('./UBX_HNR_PVT.js')/*UbxHnrPvt*/
+    0x00: require('./HNR_PVT.js')/*HnrPvt*/
   }
 };
 

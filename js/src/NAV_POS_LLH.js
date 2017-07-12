@@ -18,8 +18,6 @@ var Parser = require('binary-parser').Parser;
  *
  * @param ubx An UBX object with a payload to be decoded.
  */
-var NAV_POS_LLH = 0x02;
-
 var NavPosLlh = function (ubx) {
   UBX.call(this, ubx);
   this.messageType = "NAV-POSLLH";

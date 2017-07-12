@@ -56,8 +56,6 @@ var Parser = require('binary-parser').Parser;
  *
  * @param ubx An UBX object with a payload to be decoded.
  */
-var NAV_PVT = 0x07;
-
 var NavPVT = function (ubx) {
   UBX.call(this, ubx);
   this.messageType = "NAV-PVT";
