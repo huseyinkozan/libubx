@@ -44,19 +44,19 @@ function BufferCorruptError (message) {
 BufferCorruptError.prototype = Object.create(Error.prototype);
 BufferCorruptError.prototype.constructor = BufferCorruptError;
 
-var packages = ['position'];
-
-var ubxTable = packages.map(function (pkg) {
-  return require("./" + pkg + ".js");
-}).reduce(function (prev, curr) {
-  var numericKeysDict = {};
-  Object.keys(curr).map(function (key) {
-    if (parseInt(key) == key) {
-      numericKeysDict[key] = curr[key];
-    }
-  });
-  return mergeDict(prev, numericKeysDict);
-}, {});
+/**
+ * UBX message dictionary
+ */
+var ubxTable = {
+  0x01: {
+    0x01: require('./NAV_POS_ECEF.js')/*NavPosEcef*/,
+    0x02: require('./NAV_POS_LLH.js')/*NavPosLlh*/,
+    0x07: require('./NAV_POS_PVT.js')/*NavPVT*/
+  },
+  0x28: {
+    0x00: require('./UBX_HNR_PVT.js')/*UbxHnrPvt*/
+  }
+};
 
 var parser = new Parser()
   .uint8('sync1')
