@@ -2,7 +2,7 @@ var UBX = require('./ubx');
 var Parser = require('binary-parser').Parser;
 
 /**
- * UBX class for message NAV_NAV_ATT (0x01 0x05).
+ * UBX class for message UBX_NAV_ATT (0x01 0x05).
  */
 
 var NavAtt = function (ubx) {
@@ -33,11 +33,11 @@ NavAtt.prototype.fieldSpec.push(['version', 'writeUInt8', 1]);
 NavAtt.prototype.fieldSpec.push(['reserved1a', 'writeUInt8', 1]);
 NavAtt.prototype.fieldSpec.push(['reserved1b', 'writeUInt8', 1]);
 NavAtt.prototype.fieldSpec.push(['reserved1c', 'writeUInt8', 1]);
-HnrPvt.prototype.fieldSpec.push(['roll', 'writeFloatLE', 4]);
-HnrPvt.prototype.fieldSpec.push(['pitch', 'writeFloatLE', 4]);
-HnrPvt.prototype.fieldSpec.push(['heading', 'writeFloatLE', 4]);
-HnrPvt.prototype.fieldSpec.push(['accRoll', 'writeFloatLE', 4]);
-HnrPvt.prototype.fieldSpec.push(['accPitch', 'writeFloatLE', 4]);
-HnrPvt.prototype.fieldSpec.push(['accHeading', 'writeFloatLE', 4]);
+NavAtt.prototype.fieldSpec.push(['roll', 'writeFloatLE', 4]);
+NavAtt.prototype.fieldSpec.push(['pitch', 'writeFloatLE', 4]);
+NavAtt.prototype.fieldSpec.push(['heading', 'writeFloatLE', 4]);
+NavAtt.prototype.fieldSpec.push(['accRoll', 'writeFloatLE', 4]);
+NavAtt.prototype.fieldSpec.push(['accPitch', 'writeFloatLE', 4]);
+NavAtt.prototype.fieldSpec.push(['accHeading', 'writeFloatLE', 4]);
 
 module.exports = NavAtt;
