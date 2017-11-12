@@ -40,6 +40,13 @@ describe('Check parsing of navigation message', function () {
     const packetParsed = ubx.decode(packet);
     t.assert(JSON.stringify(packetParsed.fields) === JSON.stringify(expected));
   });
+
+  it('Validate NAV_STATUS', function () {
+    const expected = {iTOW: 465572000, gpsFix:1, flags:2, fixStat:3, flags2:4, ttff:5, msss:6};
+    const packet = textPacketToBinary('B5 62 01 03 10 00 A0 10 C0 1B 01 02 03 04 05 00 00 00 06 00 00 00 B4 E0');
+    const packetParsed = ubx.decode(packet);
+    t.assert(JSON.stringify(packetParsed.fields) === JSON.stringify(expected));
+  });
 });
 
 function textPacketToBinary(text) {
